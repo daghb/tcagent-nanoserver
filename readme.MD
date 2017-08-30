@@ -31,9 +31,7 @@ This optional step takes care of the unpacking and repacking of the necessary JD
 
 This step will upload the JDK to Nano Server, unpack it and set the JAVA_HOME environment variable
 ##### Step 4
-1. Edit the .\buildAgent.properties file and insert your own server's name/port and the name of the build agent
-serverUrl=http://mybuildserver:mybuildserverport
-name=NanoAgent-1
+1. Edit the .\buildAgent.properties file and insert your own server's name/port (serverUrl parameter) and the name of the build agent (name parameter)
 2. cd into ..\step4
 3. Run build.cmd
 4. Run run.cmd
