@@ -22,7 +22,7 @@ You will build the image using the latest nano server image from Microsoft as a 
 This will download the nanoserver image and run windows update on it
 ##### Step 2
 1. cd into ..\step2
-2. Run pack-jdk-64.cmd <path-and-filename-of-the-downloaded-jdk-exe-file>
+2. Run pack-jdk-64.cmd path-and-filename-of-the-downloaded-jdk-exe-file
 
 This optional step takes care of the unpacking and repacking of the necessary JDK files into a .tar.gz file that will be put on ..\step3. Thanks to https://github.com/smaudet for the base packing file
 ##### Step 3
