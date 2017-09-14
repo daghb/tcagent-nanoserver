@@ -39,6 +39,6 @@ This step will upload the JDK to Nano Server, unpack it and set the JAVA_HOME en
 5. Run run.cmd
 6. cd into BuildAgent\buildAgent\bin folder and start the agent with "agent start"
 7. Bring up your TeamCity Server admin console and authorize the new agent as it asks for permission to connect
-8. After a while, the agent will doewnload and install all plugins and make itself available on the default pool
+8. After a while, the agent will download and install all plugins and make itself available on the default pool
 
 This step will install the Build Agent files and prepare the environment config files. **Note**: The supplied run.cmd is for testing only. You should definitely not be giving the build agent a static name when running the container
