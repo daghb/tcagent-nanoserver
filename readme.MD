@@ -14,16 +14,16 @@ Step by step build a Windows TeamCity Build Agent on Docker, suitable for .NET C
 You will build the image using the latest nano server image from Microsoft as a base image. Please follow the instructions below closely
 
 ##### Step 1
-1. Download the latest Windows JDK exe file from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-2. Start a CMD prompt
-3. cd into build\step1
-4. If you want to build a Windows Server Core image instead of a Nano Server one, edit Dockerfile, comment "FROM microsoft/nanoserver", uncomment "FROM microsoft/windowsservercore..." in the Dockerfile
-5. Run build.cmd
+1. Start a CMD prompt
+2. cd into build\step1
+3. If you want to build a Windows Server Core image instead of a Nano Server one, edit Dockerfile, comment "FROM microsoft/nanoserver", uncomment "FROM microsoft/windowsservercore..." in the Dockerfile
+4. Run build.cmd
 
 This will download the nanoserver image and run windows update on it
 ##### Step 2
 1. cd into ..\step2
-2. Run pack-jdk-64.cmd path-and-filename-of-the-downloaded-jdk-exe-file
+2. Download the latest Windows JDK exe file from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+3. Run ```pack-jdk-64.cmd path-and-filename-of-the-downloaded-jdk-exe-file```
 
 This optional step takes care of the unpacking and repacking of the necessary JDK files into a .tar.gz file that will be put on ..\step3. Thanks to https://github.com/smaudet for the base packing file
 ##### Step 3
@@ -34,7 +34,7 @@ This step will upload the JDK to Nano Server, unpack it and set the JAVA_HOME en
 ##### Step 4
 1. Edit the .\buildAgent.properties file and insert your own server's name/port (serverUrl parameter) and the name of the build agent (name parameter)
 2. cd into ..\step4
-3. Edit the Dockerfile and eventually the installMSBuildTools.ps1 as appropriate. Several tools may be included by uncommenting lines in the Dockerfile
+3. Edit the Dockerfile and eventually the installMSBuildTools.ps1 (if you enable MS Build Tools install in Dockerfile). Several tools and options may be included by uncommenting lines in the Dockerfile
 4. Run build.cmd
 5. Run run.cmd
 6. cd into BuildAgent\buildAgent\bin folder and start the agent with "agent start"
