@@ -6,14 +6,18 @@ set jdk_exe="%1"
 
 echo Extracting '.rsrc/1033/JAVA_CAB10/111'
 %tool7z% e %jdk_exe% .rsrc/1033/JAVA_CAB10/111
+rem :: %tool7z% e %jdk_exe% .rsrc/1033/version.txt
 
-echo Extracting '111' (tools)
+echo Extracting '111'
 extrac32 111
 
-echo Removing '111' (tools)
+echo Removing '111'
 del 111
 
+echo Extracting 'tools.zip'
 %tool7z% x tools.zip -otools
+
+echo Removing 'tools.zip'
 del tools.zip
 
 echo Extracting '*.pack'

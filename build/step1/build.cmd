@@ -1,1 +1,1 @@
-docker build -t tctest/updatednanoserver .
+docker build -t tctest/updatedwindowsserver .

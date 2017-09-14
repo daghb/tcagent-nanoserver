@@ -1,1 +1,1 @@
-docker build -t tctest/teamcityagentnanoserver .
+docker build -t tctest/tcagentwindowsserver .

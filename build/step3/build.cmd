@@ -1,1 +1,1 @@
-docker build -t tctest/javananoserver .
+docker build -t tctest/javawindowsserver .
