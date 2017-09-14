@@ -17,7 +17,7 @@ You will build the image using the latest nano server image from Microsoft as a 
 1. Download the latest Windows JDK exe file from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 2. Start a CMD prompt
 3. cd into build\step1
-4. If you want to build a Windows Server Core image instead of a Nano Server one, edit Dockerfile and replace "FROM microsoft/nanoserver" with "FROM microsoft/windowsservercore..." from the commented line below the FROM statement
+4. If you want to build a Windows Server Core image instead of a Nano Server one, edit Dockerfile, comment "FROM microsoft/nanoserver", uncomment "FROM microsoft/windowsservercore..." from the commented line below the FROM statement
 5. Run build.cmd
 
 This will download the nanoserver image and run windows update on it
@@ -34,11 +34,11 @@ This step will upload the JDK to Nano Server, unpack it and set the JAVA_HOME en
 ##### Step 4
 1. Edit the .\buildAgent.properties file and insert your own server's name/port (serverUrl parameter) and the name of the build agent (name parameter)
 2. cd into ..\step4
-3. Run build.cmd
-4. Run run.cmd
-5. cd into BuildAgent\buildAgent\bin folder and start the agent with "agent start"
-6. Bring up your TeamCity Server admin console and authorize the new agent as it asks for permission to connect
-7. After a while, the agent will doewnload and inslall all plugins and make itself available on the default pool
+3. Edit the Dockerfile and eventually the installMSBuildTools.ps1 as appropriate. Several tools may be included by uncommenting lines in the Dockerfile
+4. Run build.cmd
+5. Run run.cmd
+6. cd into BuildAgent\buildAgent\bin folder and start the agent with "agent start"
+7. Bring up your TeamCity Server admin console and authorize the new agent as it asks for permission to connect
+8. After a while, the agent will doewnload and inslall all plugins and make itself available on the default pool
 
-This step will install the Build Agent files and prepare the environment config files. **Note**: Step 4 is for testing only. You should definitely not be giving the build agent a static name when running the container
-
+This step will install the Build Agent files and prepare the environment config files. **Note**: The supplied run.cmd is for testing only. You should definitely not be giving the build agent a static name when running the container
