@@ -12,11 +12,12 @@ Step by step build a Windows TeamCity Build Agent on Docker, suitable for .NET C
 
 ### How do I build my docker image?
 You will build the image using the latest nano server image from Microsoft as a base image. Please follow the instructions below closely
+
 ##### Step 1
 1. Download the latest Windows JDK exe file from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 2. Start a CMD prompt
 3. cd into build\step1
-4. If you want to build a Windows Server Core image instead of a Nano Server one, edit Dockerfile and replace "FROM microsoft/nanoserver" with "FROM microsoft/windowsservercore"
+4. If you want to build a Windows Server Core image instead of a Nano Server one, edit Dockerfile and replace "FROM microsoft/nanoserver" with "FROM microsoft/windowsservercore..." from the commented line below the FROM statement
 5. Run build.cmd
 
 This will download the nanoserver image and run windows update on it
