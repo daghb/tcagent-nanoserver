@@ -27,6 +27,9 @@ ADD buildAgent.properties C:\\BuildAgent\\buildAgent\\conf\\buildAgent.propertie
 
 ### Add if you use MS Build Tools (msbuild etc)
 # ADD https://aka.ms/vs/15/release/vs_buildtools.exe /install/vs_buildtools.exe
+### BUG in Visual Studio which makes ToolsVersion in .csproj files complain. Bot lines below can be removed after MS Build Tools 15.5
+# ENV VSINSTALLDIR C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools
+# ENV VisualStudioVersion 15.0
 # ADD installMSBuildTools.ps1 /install
 # RUN powershell.exe /install/installBuildTools.ps1
 
